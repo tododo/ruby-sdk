@@ -27,10 +27,10 @@ describe OrderCloud::Configuration do
   let(:config) { OrderCloud::Configuration.default }
   let(:impersonation_token) { 'sI3PGLztu7HXfLoHobb9' }
   let(:access_token) { 'HteOBUPWe7ccTSpQKLVC' }
-  
+
   before(:each) do
     OrderCloud::Configuration.reset
-    require 'URI'
+    require 'uri'
     uri = URI.parse("https://api.ordercloud.io/v1")
     OrderCloud.configure do |c|
       c.host = uri.host
@@ -52,7 +52,7 @@ describe OrderCloud::Configuration do
       end
     end
   end
-  
+
   describe '#get_access_token' do
     it 'returns the access_token if not impersonating' do
       config.access_token = access_token
