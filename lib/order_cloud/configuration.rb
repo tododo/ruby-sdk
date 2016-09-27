@@ -33,7 +33,7 @@ module OrderCloud
 
     # Returns true if impersonation is on, false otherwise
     def impersonating?
-      !@impersonation_token.empty?
+      @impersonation_token
     end
 
     # Returns the appropriate token
@@ -171,7 +171,8 @@ module OrderCloud
       @logger = defined?(Rails) ? Rails.logger : Logger.new(STDOUT)
 
       @auth_url = 'https://auth.ordercloud.io/oauth/token'
-      @impersonation_token = ''
+      @impersonation_token = nil
+      @access_token = nil
       @client_id = ''
       @scopes = []
 
@@ -236,7 +237,7 @@ module OrderCloud
             type: 'oauth2',
             in: 'header',
             key: 'Authorization',
-            value: "Bearer #{get_access_token}"
+            value: "Bearer #{get_access_token.access_token}"
           },
       }
     end

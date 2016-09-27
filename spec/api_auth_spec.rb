@@ -37,7 +37,7 @@ describe OrderCloud::ApiAuth do
   let(:scopes) { ['FullAccess'] }
   let(:bad_auth_url) { 'thisshouldnotwork.com' }
 
-  let(:impersonation_token) { '4QAtuGBvK8bj22XdT0H5' }
+  let(:impersonation_token) { OrderCloud::AccessToken.new({:access_token => '4QAtuGBvK8bj22XdT0H5', :expires_in => 1000, :token_type => 'Bearer' }) }
 
   let(:config) { OrderCloud::Configuration.default }
   before(:each) do

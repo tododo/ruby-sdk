@@ -55,7 +55,16 @@ module OrderCloud
       )
       request.on_complete do |response|
         if response.success?
-          OrderCloud::Configuration.default.access_token = JSON.parse(response.body)["access_token"]
+          token = JSON.parse(response.body)
+          if(token.key?("error"))
+            fail token["error"]
+          else
+          OrderCloud::Configuration.default.access_token = OrderCloud::AccessToken.new({
+            :access_token => token["access_token"], 
+            :expires_in => token["expires_in"],
+            :token_type => token["token_type"]
+          })
+          end
         elsif response.timed_out?
           fail "HTTP Request timed out"
         elsif response.code == 0
@@ -93,7 +102,7 @@ module OrderCloud
     end
 
     def self.stop_impersonate
-      OrderCloud::Configuration.default.impersonation_token = ''
+      OrderCloud::Configuration.default.impersonation_token = nil 
     end
   end
 end
