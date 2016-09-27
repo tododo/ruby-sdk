@@ -22,5 +22,5 @@ limitations under the License.
 =end
 
 module OrderCloud
-  VERSION = "0.0.2"
+  VERSION = "0.0.4"
 end
