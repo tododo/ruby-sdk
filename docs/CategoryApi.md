@@ -472,7 +472,7 @@ Name | Type | Description  | Notes
 
 
 # **patch**
-> patch(buyer_id, category_id, category)
+> Category patch(buyer_id, category_id, category)
 
 
 
@@ -496,7 +496,8 @@ category = OrderCloud::Category.new # Category |
 
 
 begin
-  api_instance.patch(buyer_id, category_id, category)
+  result = api_instance.patch(buyer_id, category_id, category)
+  p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling CategoryApi->patch: #{e}"
 end
@@ -512,7 +513,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**Category**](Category.md)
 
 ### Authorization
 

@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **terms_accepted** | **String** |  | [optional] 
 **active** | **BOOLEAN** |  | [optional] 
 **xp** | **Object** |  | [optional] 
+**available_roles** | **Array&lt;String&gt;** |  | [optional] 
 
 

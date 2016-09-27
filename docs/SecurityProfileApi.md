@@ -4,11 +4,11 @@ All URIs are relative to *https://api.ordercloud.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_assignment**](SecurityProfileApi.md#delete_assignment) | **DELETE** /SecurityProfiles/{securityProfileID}/assignments | 
-[**get**](SecurityProfileApi.md#get) | **GET** /SecurityProfiles/{securityProfileID} | 
-[**list**](SecurityProfileApi.md#list) | **GET** /SecurityProfiles | 
-[**list_assignments**](SecurityProfileApi.md#list_assignments) | **GET** /SecurityProfiles/assignments | 
-[**save_assignment**](SecurityProfileApi.md#save_assignment) | **POST** /SecurityProfiles/assignments | 
+[**delete_assignment**](SecurityProfileApi.md#delete_assignment) | **DELETE** /securityprofiles/{securityProfileID}/assignments | 
+[**get**](SecurityProfileApi.md#get) | **GET** /securityprofiles/{securityProfileID} | 
+[**list**](SecurityProfileApi.md#list) | **GET** /securityprofiles | 
+[**list_assignments**](SecurityProfileApi.md#list_assignments) | **GET** /securityprofiles/assignments | 
+[**save_assignment**](SecurityProfileApi.md#save_assignment) | **POST** /securityprofiles/assignments | 
 
 
 # **delete_assignment**

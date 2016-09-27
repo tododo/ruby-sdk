@@ -746,7 +746,7 @@ Name | Type | Description  | Notes
 
 
 # **patch**
-> patch(product_id, product)
+> Product patch(product_id, product)
 
 
 
@@ -768,7 +768,8 @@ product = OrderCloud::Product.new # Product |
 
 
 begin
-  api_instance.patch(product_id, product)
+  result = api_instance.patch(product_id, product)
+  p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling ProductApi->patch: #{e}"
 end
@@ -783,7 +784,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**Product**](Product.md)
 
 ### Authorization
 

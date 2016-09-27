@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 
 # **patch**
-> patch(buyer_id, user_group_id, group)
+> UserGroup patch(buyer_id, user_group_id, group)
 
 
 
@@ -371,7 +371,8 @@ group = OrderCloud::UserGroup.new # UserGroup |
 
 
 begin
-  api_instance.patch(buyer_id, user_group_id, group)
+  result = api_instance.patch(buyer_id, user_group_id, group)
+  p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling UserGroupApi->patch: #{e}"
 end
@@ -387,7 +388,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**UserGroup**](UserGroup.md)
 
 ### Authorization
 
