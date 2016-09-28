@@ -1,5 +1,12 @@
 language: ruby
 rvm:
-  - 2.3.1
+- 2.3.1
 notifications:
-    slack: four51:7JMOT6XhPXuBi1XWcxdqy4MV
+  slack: four51:7JMOT6XhPXuBi1XWcxdqy4MV
+deploy:
+  on:
+    tags: true
+  provider: rubygems
+  api_key:
+    secure: L5MeW3EAIywVUpL3Yt0/vYQ7plFxdN4TvC86xuQdFNDiGFhgXDgiO8f+9VUxInyQSUaHV3Oajz2PqlvkEn/rVQPdnM71zON0PSCUkVUz7lmo+kTKg0YlnCxlNVbBIgK4D26MSXcGKsV7qShhVLts2mxUFjn/EewTmBh67j4aFRSW7uEMtrQdxV77w8BOAoX+ctWjqiMHTvxR1bAp1uKrXDbccsE7FEfozrNBb8osL/DsZCL7Cft42vmjHq6VfrYe/B9J796xV7aRUiUUjddpjScmx66rA44z0c7JNXtJX8HKeyQCtWQKj6FlIm/yxfyMGpkXX765U3Hhmud5858i34XS8eW0k+csWTGDI6zulSXW88DJFKsnCz0Pf26YD14qmD8cVzQc4jqEVIGbwNttg7gJkB8i+uQtDjStcaIoU4atroHXvssEwx+z15zriT2eBP38dpmO2j/b4pFQgYROEQrP6Sc4cm2txnez+3mVofzTsjhuCmy1NqJBZFwsFVjwfA4nqEAg9Ku4rBG0W02FRTK7p8qA1cotZOiGYNLAZSCS/9v4vcZ1mlJ1R6pBliQU6piAXalshP+xlc0/j4xpPZpey3kyfC49+HmB32bLrDkaKJ0bwc0yOQ37w+uhqFT/3NpnoJ3I/oQYpCxo+wrOLGYiHD/Zj5WSLQXgVWxaluY=
+  gem: order_cloud
