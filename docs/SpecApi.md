@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 
 # **delete**
-> delete(spec_id)
+> Task delete(spec_id)
 
 
 
@@ -143,7 +143,8 @@ spec_id = "spec_id_example" # String | ID of the spec.
 
 
 begin
-  api_instance.delete(spec_id)
+  result = api_instance.delete(spec_id)
+  p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling SpecApi->delete: #{e}"
 end
@@ -157,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**Task**](Task.md)
 
 ### Authorization
 
@@ -171,7 +172,7 @@ nil (empty response body)
 
 
 # **delete_option**
-> delete_option(spec_id, option_id)
+> Task delete_option(spec_id, option_id)
 
 
 
@@ -193,7 +194,8 @@ option_id = "option_id_example" # String | ID of the option.
 
 
 begin
-  api_instance.delete_option(spec_id, option_id)
+  result = api_instance.delete_option(spec_id, option_id)
+  p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling SpecApi->delete_option: #{e}"
 end
@@ -208,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**Task**](Task.md)
 
 ### Authorization
 
@@ -222,7 +224,7 @@ nil (empty response body)
 
 
 # **delete_product_assignment**
-> delete_product_assignment(spec_id, product_id)
+> Task delete_product_assignment(spec_id, product_id)
 
 
 
@@ -244,7 +246,8 @@ product_id = "product_id_example" # String | ID of the product.
 
 
 begin
-  api_instance.delete_product_assignment(spec_id, product_id)
+  result = api_instance.delete_product_assignment(spec_id, product_id)
+  p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling SpecApi->delete_product_assignment: #{e}"
 end
@@ -259,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**Task**](Task.md)
 
 ### Authorization
 
@@ -660,7 +663,7 @@ Name | Type | Description  | Notes
 
 
 # **save_product_assignment**
-> save_product_assignment(product_assignment)
+> Task save_product_assignment(product_assignment)
 
 
 
@@ -680,7 +683,8 @@ product_assignment = OrderCloud::SpecProductAssignment.new # SpecProductAssignme
 
 
 begin
-  api_instance.save_product_assignment(product_assignment)
+  result = api_instance.save_product_assignment(product_assignment)
+  p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling SpecApi->save_product_assignment: #{e}"
 end
@@ -694,7 +698,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**Task**](Task.md)
 
 ### Authorization
 

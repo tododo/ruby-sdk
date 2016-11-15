@@ -153,17 +153,17 @@ module OrderCloud
     # 
     # @param spec_id ID of the spec.
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [Task]
     def delete(spec_id, opts = {})
-      delete_with_http_info(spec_id, opts)
-      return nil
+      data, _status_code, _headers = delete_with_http_info(spec_id, opts)
+      return data
     end
 
     # 
     # 
     # @param spec_id ID of the spec.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(Task, Fixnum, Hash)>] Task data, response status code and response headers
     def delete_with_http_info(spec_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SpecApi.delete ..."
@@ -198,7 +198,8 @@ module OrderCloud
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'Task')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SpecApi#delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -210,10 +211,10 @@ module OrderCloud
     # @param spec_id ID of the spec.
     # @param option_id ID of the option.
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [Task]
     def delete_option(spec_id, option_id, opts = {})
-      delete_option_with_http_info(spec_id, option_id, opts)
-      return nil
+      data, _status_code, _headers = delete_option_with_http_info(spec_id, option_id, opts)
+      return data
     end
 
     # 
@@ -221,7 +222,7 @@ module OrderCloud
     # @param spec_id ID of the spec.
     # @param option_id ID of the option.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(Task, Fixnum, Hash)>] Task data, response status code and response headers
     def delete_option_with_http_info(spec_id, option_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SpecApi.delete_option ..."
@@ -258,7 +259,8 @@ module OrderCloud
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'Task')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SpecApi#delete_option\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -270,10 +272,10 @@ module OrderCloud
     # @param spec_id ID of the spec.
     # @param product_id ID of the product.
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [Task]
     def delete_product_assignment(spec_id, product_id, opts = {})
-      delete_product_assignment_with_http_info(spec_id, product_id, opts)
-      return nil
+      data, _status_code, _headers = delete_product_assignment_with_http_info(spec_id, product_id, opts)
+      return data
     end
 
     # 
@@ -281,7 +283,7 @@ module OrderCloud
     # @param spec_id ID of the spec.
     # @param product_id ID of the product.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(Task, Fixnum, Hash)>] Task data, response status code and response headers
     def delete_product_assignment_with_http_info(spec_id, product_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SpecApi.delete_product_assignment ..."
@@ -318,7 +320,8 @@ module OrderCloud
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'Task')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SpecApi#delete_product_assignment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -784,17 +787,17 @@ module OrderCloud
     # 
     # @param product_assignment 
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [Task]
     def save_product_assignment(product_assignment, opts = {})
-      save_product_assignment_with_http_info(product_assignment, opts)
-      return nil
+      data, _status_code, _headers = save_product_assignment_with_http_info(product_assignment, opts)
+      return data
     end
 
     # 
     # 
     # @param product_assignment 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(Task, Fixnum, Hash)>] Task data, response status code and response headers
     def save_product_assignment_with_http_info(product_assignment, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SpecApi.save_product_assignment ..."
@@ -829,7 +832,8 @@ module OrderCloud
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'Task')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SpecApi#save_product_assignment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

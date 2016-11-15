@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **base_url** | **String** |  | [optional] 
 **shared_key** | **String** |  | [optional] 
-**client_id** | **String** |  | [optional] 
 **append_route** | **BOOLEAN** |  | [optional] 
 **use_verb** | **BOOLEAN** |  | [optional] 
 **elevated_claims_list** | **String** |  | [optional] 

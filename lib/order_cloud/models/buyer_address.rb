@@ -26,9 +26,9 @@ require 'date'
 module OrderCloud
 
   class BuyerAddress
-    attr_accessor :id
-
     attr_accessor :shipping
+
+    attr_accessor :id
 
     attr_accessor :billing
 
@@ -38,8 +38,8 @@ module OrderCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'ID',
         :'shipping' => :'Shipping',
+        :'id' => :'ID',
         :'billing' => :'Billing',
         :'editable' => :'Editable'
       }
@@ -48,8 +48,8 @@ module OrderCloud
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'id' => :'String',
         :'shipping' => :'BOOLEAN',
+        :'id' => :'String',
         :'billing' => :'BOOLEAN',
         :'editable' => :'BOOLEAN'
       }
@@ -63,12 +63,12 @@ module OrderCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'ID')
-        self.id = attributes[:'ID']
-      end
-
       if attributes.has_key?(:'Shipping')
         self.shipping = attributes[:'Shipping']
+      end
+
+      if attributes.has_key?(:'ID')
+        self.id = attributes[:'ID']
       end
 
       if attributes.has_key?(:'Billing')
@@ -99,8 +99,8 @@ module OrderCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
           shipping == o.shipping &&
+          id == o.id &&
           billing == o.billing &&
           editable == o.editable
     end
@@ -114,7 +114,7 @@ module OrderCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, shipping, billing, editable].hash
+      [shipping, id, billing, editable].hash
     end
 
     # Builds the object from hash

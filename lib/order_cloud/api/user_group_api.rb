@@ -158,10 +158,10 @@ module OrderCloud
     # @param user_group_id ID of the user group.
     # @param user_id ID of the user.
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [Task]
     def delete_user_assignment(buyer_id, user_group_id, user_id, opts = {})
-      delete_user_assignment_with_http_info(buyer_id, user_group_id, user_id, opts)
-      return nil
+      data, _status_code, _headers = delete_user_assignment_with_http_info(buyer_id, user_group_id, user_id, opts)
+      return data
     end
 
     # 
@@ -170,7 +170,7 @@ module OrderCloud
     # @param user_group_id ID of the user group.
     # @param user_id ID of the user.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(Task, Fixnum, Hash)>] Task data, response status code and response headers
     def delete_user_assignment_with_http_info(buyer_id, user_group_id, user_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UserGroupApi.delete_user_assignment ..."
@@ -209,7 +209,8 @@ module OrderCloud
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'Task')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserGroupApi#delete_user_assignment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -491,10 +492,10 @@ module OrderCloud
     # @param buyer_id ID of the buyer.
     # @param user_group_assignment 
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [Task]
     def save_user_assignment(buyer_id, user_group_assignment, opts = {})
-      save_user_assignment_with_http_info(buyer_id, user_group_assignment, opts)
-      return nil
+      data, _status_code, _headers = save_user_assignment_with_http_info(buyer_id, user_group_assignment, opts)
+      return data
     end
 
     # 
@@ -502,7 +503,7 @@ module OrderCloud
     # @param buyer_id ID of the buyer.
     # @param user_group_assignment 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(Task, Fixnum, Hash)>] Task data, response status code and response headers
     def save_user_assignment_with_http_info(buyer_id, user_group_assignment, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UserGroupApi.save_user_assignment ..."
@@ -539,7 +540,8 @@ module OrderCloud
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'Task')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserGroupApi#save_user_assignment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

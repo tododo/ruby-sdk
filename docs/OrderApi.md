@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 
 # **delete**
-> delete(buyer_id, order_id)
+> Task delete(buyer_id, order_id)
 
 
 
@@ -322,7 +322,8 @@ order_id = "order_id_example" # String | ID of the order.
 
 
 begin
-  api_instance.delete(buyer_id, order_id)
+  result = api_instance.delete(buyer_id, order_id)
+  p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling OrderApi->delete: #{e}"
 end
@@ -337,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**Task**](Task.md)
 
 ### Authorization
 

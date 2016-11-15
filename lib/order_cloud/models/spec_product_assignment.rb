@@ -30,7 +30,9 @@ module OrderCloud
 
     attr_accessor :product_id
 
-    attr_accessor :defines_variant
+    attr_accessor :default_value
+
+    attr_accessor :default_option_id
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -38,7 +40,8 @@ module OrderCloud
       {
         :'spec_id' => :'SpecID',
         :'product_id' => :'ProductID',
-        :'defines_variant' => :'DefinesVariant'
+        :'default_value' => :'DefaultValue',
+        :'default_option_id' => :'DefaultOptionID'
       }
     end
 
@@ -47,7 +50,8 @@ module OrderCloud
       {
         :'spec_id' => :'String',
         :'product_id' => :'String',
-        :'defines_variant' => :'BOOLEAN'
+        :'default_value' => :'String',
+        :'default_option_id' => :'String'
       }
     end
 
@@ -67,8 +71,12 @@ module OrderCloud
         self.product_id = attributes[:'ProductID']
       end
 
-      if attributes.has_key?(:'DefinesVariant')
-        self.defines_variant = attributes[:'DefinesVariant']
+      if attributes.has_key?(:'DefaultValue')
+        self.default_value = attributes[:'DefaultValue']
+      end
+
+      if attributes.has_key?(:'DefaultOptionID')
+        self.default_option_id = attributes[:'DefaultOptionID']
       end
 
     end
@@ -93,7 +101,8 @@ module OrderCloud
       self.class == o.class &&
           spec_id == o.spec_id &&
           product_id == o.product_id &&
-          defines_variant == o.defines_variant
+          default_value == o.default_value &&
+          default_option_id == o.default_option_id
     end
 
     # @see the `==` method
@@ -105,7 +114,7 @@ module OrderCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [spec_id, product_id, defines_variant].hash
+      [spec_id, product_id, default_value, default_option_id].hash
     end
 
     # Builds the object from hash

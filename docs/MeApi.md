@@ -646,6 +646,7 @@ api_instance = OrderCloud::MeApi.new
 
 opts = { 
   depth: "depth_example", # String | Depth of the category.
+  catalog_id: "catalog_id_example", # String | ID of the catalog.
   search: "search_example", # String | Word or phrase to search for.
   search_on: "search_on_example", # String | Comma-delimited list of fields to search on.
   sort_by: "sort_by_example", # String | Comma-delimited list of fields to sort by.
@@ -667,6 +668,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **depth** | **String**| Depth of the category. | [optional] 
+ **catalog_id** | **String**| ID of the catalog. | [optional] 
  **search** | **String**| Word or phrase to search for. | [optional] 
  **search_on** | **String**| Comma-delimited list of fields to search on. | [optional] 
  **sort_by** | **String**| Comma-delimited list of fields to sort by. | [optional] 
@@ -956,6 +958,7 @@ api_instance = OrderCloud::MeApi.new
 
 opts = { 
   category_id: "category_id_example", # String | ID of the category.
+  catalog_id: "catalog_id_example", # String | ID of the catalog.
   search: "search_example", # String | Word or phrase to search for.
   search_on: "search_on_example", # String | Comma-delimited list of fields to search on.
   sort_by: "sort_by_example", # String | Comma-delimited list of fields to sort by.
@@ -977,6 +980,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **category_id** | **String**| ID of the category. | [optional] 
+ **catalog_id** | **String**| ID of the catalog. | [optional] 
  **search** | **String**| Word or phrase to search for. | [optional] 
  **search_on** | **String**| Comma-delimited list of fields to search on. | [optional] 
  **sort_by** | **String**| Comma-delimited list of fields to sort by. | [optional] 

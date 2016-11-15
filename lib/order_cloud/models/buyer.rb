@@ -30,6 +30,8 @@ module OrderCloud
 
     attr_accessor :name
 
+    attr_accessor :default_catalog_id
+
     attr_accessor :active
 
     attr_accessor :xp
@@ -40,6 +42,7 @@ module OrderCloud
       {
         :'id' => :'ID',
         :'name' => :'Name',
+        :'default_catalog_id' => :'DefaultCatalogID',
         :'active' => :'Active',
         :'xp' => :'xp'
       }
@@ -50,6 +53,7 @@ module OrderCloud
       {
         :'id' => :'String',
         :'name' => :'String',
+        :'default_catalog_id' => :'String',
         :'active' => :'BOOLEAN',
         :'xp' => :'Object'
       }
@@ -69,6 +73,10 @@ module OrderCloud
 
       if attributes.has_key?(:'Name')
         self.name = attributes[:'Name']
+      end
+
+      if attributes.has_key?(:'DefaultCatalogID')
+        self.default_catalog_id = attributes[:'DefaultCatalogID']
       end
 
       if attributes.has_key?(:'Active')
@@ -101,6 +109,7 @@ module OrderCloud
       self.class == o.class &&
           id == o.id &&
           name == o.name &&
+          default_catalog_id == o.default_catalog_id &&
           active == o.active &&
           xp == o.xp
     end
@@ -114,7 +123,7 @@ module OrderCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, name, active, xp].hash
+      [id, name, default_catalog_id, active, xp].hash
     end
 
     # Builds the object from hash

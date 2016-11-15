@@ -731,6 +731,7 @@ module OrderCloud
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :depth Depth of the category.
+    # @option opts [String] :catalog_id ID of the catalog.
     # @option opts [String] :search Word or phrase to search for.
     # @option opts [String] :search_on Comma-delimited list of fields to search on.
     # @option opts [String] :sort_by Comma-delimited list of fields to sort by.
@@ -747,6 +748,7 @@ module OrderCloud
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :depth Depth of the category.
+    # @option opts [String] :catalog_id ID of the catalog.
     # @option opts [String] :search Word or phrase to search for.
     # @option opts [String] :search_on Comma-delimited list of fields to search on.
     # @option opts [String] :sort_by Comma-delimited list of fields to sort by.
@@ -764,6 +766,7 @@ module OrderCloud
       # query parameters
       query_params = {}
       query_params[:'depth'] = opts[:'depth'] if !opts[:'depth'].nil?
+      query_params[:'catalogID'] = opts[:'catalog_id'] if !opts[:'catalog_id'].nil?
       query_params[:'search'] = opts[:'search'] if !opts[:'search'].nil?
       query_params[:'searchOn'] = opts[:'search_on'] if !opts[:'search_on'].nil?
       query_params[:'sortBy'] = opts[:'sort_by'] if !opts[:'sort_by'].nil?
@@ -1101,6 +1104,7 @@ module OrderCloud
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :category_id ID of the category.
+    # @option opts [String] :catalog_id ID of the catalog.
     # @option opts [String] :search Word or phrase to search for.
     # @option opts [String] :search_on Comma-delimited list of fields to search on.
     # @option opts [String] :sort_by Comma-delimited list of fields to sort by.
@@ -1117,6 +1121,7 @@ module OrderCloud
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :category_id ID of the category.
+    # @option opts [String] :catalog_id ID of the catalog.
     # @option opts [String] :search Word or phrase to search for.
     # @option opts [String] :search_on Comma-delimited list of fields to search on.
     # @option opts [String] :sort_by Comma-delimited list of fields to sort by.
@@ -1134,6 +1139,7 @@ module OrderCloud
       # query parameters
       query_params = {}
       query_params[:'categoryID'] = opts[:'category_id'] if !opts[:'category_id'].nil?
+      query_params[:'catalogID'] = opts[:'catalog_id'] if !opts[:'catalog_id'].nil?
       query_params[:'search'] = opts[:'search'] if !opts[:'search'].nil?
       query_params[:'searchOn'] = opts[:'search_on'] if !opts[:'search_on'].nil?
       query_params[:'sortBy'] = opts[:'sort_by'] if !opts[:'sort_by'].nil?

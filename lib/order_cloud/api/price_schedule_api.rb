@@ -92,17 +92,17 @@ module OrderCloud
     # 
     # @param price_schedule_id ID of the price schedule.
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [Task]
     def delete(price_schedule_id, opts = {})
-      delete_with_http_info(price_schedule_id, opts)
-      return nil
+      data, _status_code, _headers = delete_with_http_info(price_schedule_id, opts)
+      return data
     end
 
     # 
     # 
     # @param price_schedule_id ID of the price schedule.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(Task, Fixnum, Hash)>] Task data, response status code and response headers
     def delete_with_http_info(price_schedule_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PriceScheduleApi.delete ..."
@@ -137,7 +137,8 @@ module OrderCloud
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'Task')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PriceScheduleApi#delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -149,10 +150,10 @@ module OrderCloud
     # @param price_schedule_id ID of the price schedule.
     # @param quantity Quantity of the price schedule.
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [Task]
     def delete_price_break(price_schedule_id, quantity, opts = {})
-      delete_price_break_with_http_info(price_schedule_id, quantity, opts)
-      return nil
+      data, _status_code, _headers = delete_price_break_with_http_info(price_schedule_id, quantity, opts)
+      return data
     end
 
     # 
@@ -160,7 +161,7 @@ module OrderCloud
     # @param price_schedule_id ID of the price schedule.
     # @param quantity Quantity of the price schedule.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(Task, Fixnum, Hash)>] Task data, response status code and response headers
     def delete_price_break_with_http_info(price_schedule_id, quantity, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PriceScheduleApi.delete_price_break ..."
@@ -198,7 +199,8 @@ module OrderCloud
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'Task')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PriceScheduleApi#delete_price_break\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

@@ -277,10 +277,10 @@ module OrderCloud
     # @param user_id ID of the user.
     # @param user 
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [User]
     def patch(user_id, user, opts = {})
-      patch_with_http_info(user_id, user, opts)
-      return nil
+      data, _status_code, _headers = patch_with_http_info(user_id, user, opts)
+      return data
     end
 
     # 
@@ -288,7 +288,7 @@ module OrderCloud
     # @param user_id ID of the user.
     # @param user 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(User, Fixnum, Hash)>] User data, response status code and response headers
     def patch_with_http_info(user_id, user, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: AdminUserApi.patch ..."
@@ -325,7 +325,8 @@ module OrderCloud
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'User')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AdminUserApi#patch\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

@@ -33,31 +33,31 @@ module OrderCloud
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param category 
     # @param [Hash] opts the optional parameters
     # @return [Category]
-    def create(buyer_id, category, opts = {})
-      data, _status_code, _headers = create_with_http_info(buyer_id, category, opts)
+    def create(catalog_id, category, opts = {})
+      data, _status_code, _headers = create_with_http_info(catalog_id, category, opts)
       return data
     end
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param category 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Category, Fixnum, Hash)>] Category data, response status code and response headers
-    def create_with_http_info(buyer_id, category, opts = {})
+    def create_with_http_info(catalog_id, category, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: CategoryApi.create ..."
       end
-      # verify the required parameter 'buyer_id' is set
-      fail ArgumentError, "Missing the required parameter 'buyer_id' when calling CategoryApi.create" if buyer_id.nil?
+      # verify the required parameter 'catalog_id' is set
+      fail ArgumentError, "Missing the required parameter 'catalog_id' when calling CategoryApi.create" if catalog_id.nil?
       # verify the required parameter 'category' is set
       fail ArgumentError, "Missing the required parameter 'category' when calling CategoryApi.create" if category.nil?
       # resource path
-      local_var_path = "/buyers/{buyerID}/categories".sub('{format}','json').sub('{' + 'buyerID' + '}', buyer_id.to_s)
+      local_var_path = "/catalogs/{catalogID}/categories".sub('{format}','json').sub('{' + 'catalogID' + '}', catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -94,31 +94,31 @@ module OrderCloud
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param category_id ID of the category.
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def delete(buyer_id, category_id, opts = {})
-      delete_with_http_info(buyer_id, category_id, opts)
+    def delete(catalog_id, category_id, opts = {})
+      delete_with_http_info(catalog_id, category_id, opts)
       return nil
     end
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param category_id ID of the category.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def delete_with_http_info(buyer_id, category_id, opts = {})
+    def delete_with_http_info(catalog_id, category_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: CategoryApi.delete ..."
       end
-      # verify the required parameter 'buyer_id' is set
-      fail ArgumentError, "Missing the required parameter 'buyer_id' when calling CategoryApi.delete" if buyer_id.nil?
+      # verify the required parameter 'catalog_id' is set
+      fail ArgumentError, "Missing the required parameter 'catalog_id' when calling CategoryApi.delete" if catalog_id.nil?
       # verify the required parameter 'category_id' is set
       fail ArgumentError, "Missing the required parameter 'category_id' when calling CategoryApi.delete" if category_id.nil?
       # resource path
-      local_var_path = "/buyers/{buyerID}/categories/{categoryID}".sub('{format}','json').sub('{' + 'buyerID' + '}', buyer_id.to_s).sub('{' + 'categoryID' + '}', category_id.to_s)
+      local_var_path = "/catalogs/{catalogID}/categories/{categoryID}".sub('{format}','json').sub('{' + 'catalogID' + '}', catalog_id.to_s).sub('{' + 'categoryID' + '}', category_id.to_s)
 
       # query parameters
       query_params = {}
@@ -154,38 +154,43 @@ module OrderCloud
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param category_id ID of the category.
+    # @param buyer_id ID of the buyer.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :user_id ID of the user.
     # @option opts [String] :user_group_id ID of the user group.
     # @return [nil]
-    def delete_assignment(buyer_id, category_id, opts = {})
-      delete_assignment_with_http_info(buyer_id, category_id, opts)
+    def delete_assignment(catalog_id, category_id, buyer_id, opts = {})
+      delete_assignment_with_http_info(catalog_id, category_id, buyer_id, opts)
       return nil
     end
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param category_id ID of the category.
+    # @param buyer_id ID of the buyer.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :user_id ID of the user.
     # @option opts [String] :user_group_id ID of the user group.
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def delete_assignment_with_http_info(buyer_id, category_id, opts = {})
+    def delete_assignment_with_http_info(catalog_id, category_id, buyer_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: CategoryApi.delete_assignment ..."
       end
-      # verify the required parameter 'buyer_id' is set
-      fail ArgumentError, "Missing the required parameter 'buyer_id' when calling CategoryApi.delete_assignment" if buyer_id.nil?
+      # verify the required parameter 'catalog_id' is set
+      fail ArgumentError, "Missing the required parameter 'catalog_id' when calling CategoryApi.delete_assignment" if catalog_id.nil?
       # verify the required parameter 'category_id' is set
       fail ArgumentError, "Missing the required parameter 'category_id' when calling CategoryApi.delete_assignment" if category_id.nil?
+      # verify the required parameter 'buyer_id' is set
+      fail ArgumentError, "Missing the required parameter 'buyer_id' when calling CategoryApi.delete_assignment" if buyer_id.nil?
       # resource path
-      local_var_path = "/buyers/{buyerID}/categories/{categoryID}/assignments".sub('{format}','json').sub('{' + 'buyerID' + '}', buyer_id.to_s).sub('{' + 'categoryID' + '}', category_id.to_s)
+      local_var_path = "/catalogs/{catalogID}/categories/{categoryID}/assignments".sub('{format}','json').sub('{' + 'catalogID' + '}', catalog_id.to_s).sub('{' + 'categoryID' + '}', category_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'buyerID'] = buyer_id
       query_params[:'userID'] = opts[:'user_id'] if !opts[:'user_id'].nil?
       query_params[:'userGroupID'] = opts[:'user_group_id'] if !opts[:'user_group_id'].nil?
 
@@ -220,35 +225,35 @@ module OrderCloud
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param category_id ID of the category.
     # @param product_id ID of the product.
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def delete_product_assignment(buyer_id, category_id, product_id, opts = {})
-      delete_product_assignment_with_http_info(buyer_id, category_id, product_id, opts)
+    def delete_product_assignment(catalog_id, category_id, product_id, opts = {})
+      delete_product_assignment_with_http_info(catalog_id, category_id, product_id, opts)
       return nil
     end
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param category_id ID of the category.
     # @param product_id ID of the product.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def delete_product_assignment_with_http_info(buyer_id, category_id, product_id, opts = {})
+    def delete_product_assignment_with_http_info(catalog_id, category_id, product_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: CategoryApi.delete_product_assignment ..."
       end
-      # verify the required parameter 'buyer_id' is set
-      fail ArgumentError, "Missing the required parameter 'buyer_id' when calling CategoryApi.delete_product_assignment" if buyer_id.nil?
+      # verify the required parameter 'catalog_id' is set
+      fail ArgumentError, "Missing the required parameter 'catalog_id' when calling CategoryApi.delete_product_assignment" if catalog_id.nil?
       # verify the required parameter 'category_id' is set
       fail ArgumentError, "Missing the required parameter 'category_id' when calling CategoryApi.delete_product_assignment" if category_id.nil?
       # verify the required parameter 'product_id' is set
       fail ArgumentError, "Missing the required parameter 'product_id' when calling CategoryApi.delete_product_assignment" if product_id.nil?
       # resource path
-      local_var_path = "/buyers/{buyerID}/categories/{categoryID}/productassignments/{productID}".sub('{format}','json').sub('{' + 'buyerID' + '}', buyer_id.to_s).sub('{' + 'categoryID' + '}', category_id.to_s).sub('{' + 'productID' + '}', product_id.to_s)
+      local_var_path = "/catalogs/{catalogID}/categories/{categoryID}/productassignments/{productID}".sub('{format}','json').sub('{' + 'catalogID' + '}', catalog_id.to_s).sub('{' + 'categoryID' + '}', category_id.to_s).sub('{' + 'productID' + '}', product_id.to_s)
 
       # query parameters
       query_params = {}
@@ -284,31 +289,31 @@ module OrderCloud
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param category_id ID of the category.
     # @param [Hash] opts the optional parameters
     # @return [Category]
-    def get(buyer_id, category_id, opts = {})
-      data, _status_code, _headers = get_with_http_info(buyer_id, category_id, opts)
+    def get(catalog_id, category_id, opts = {})
+      data, _status_code, _headers = get_with_http_info(catalog_id, category_id, opts)
       return data
     end
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param category_id ID of the category.
     # @param [Hash] opts the optional parameters
     # @return [Array<(Category, Fixnum, Hash)>] Category data, response status code and response headers
-    def get_with_http_info(buyer_id, category_id, opts = {})
+    def get_with_http_info(catalog_id, category_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: CategoryApi.get ..."
       end
-      # verify the required parameter 'buyer_id' is set
-      fail ArgumentError, "Missing the required parameter 'buyer_id' when calling CategoryApi.get" if buyer_id.nil?
+      # verify the required parameter 'catalog_id' is set
+      fail ArgumentError, "Missing the required parameter 'catalog_id' when calling CategoryApi.get" if catalog_id.nil?
       # verify the required parameter 'category_id' is set
       fail ArgumentError, "Missing the required parameter 'category_id' when calling CategoryApi.get" if category_id.nil?
       # resource path
-      local_var_path = "/buyers/{buyerID}/categories/{categoryID}".sub('{format}','json').sub('{' + 'buyerID' + '}', buyer_id.to_s).sub('{' + 'categoryID' + '}', category_id.to_s)
+      local_var_path = "/catalogs/{catalogID}/categories/{categoryID}".sub('{format}','json').sub('{' + 'catalogID' + '}', catalog_id.to_s).sub('{' + 'categoryID' + '}', category_id.to_s)
 
       # query parameters
       query_params = {}
@@ -345,7 +350,7 @@ module OrderCloud
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :depth Depth of the category.
     # @option opts [String] :search Word or phrase to search for.
@@ -355,14 +360,14 @@ module OrderCloud
     # @option opts [Integer] :page_size Number of results to return per page. Default: 20, max: 100.
     # @option opts [Hash<String, String>] :filters Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or &#39;xp.???&#39;
     # @return [ListCategory]
-    def list(buyer_id, opts = {})
-      data, _status_code, _headers = list_with_http_info(buyer_id, opts)
+    def list(catalog_id, opts = {})
+      data, _status_code, _headers = list_with_http_info(catalog_id, opts)
       return data
     end
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :depth Depth of the category.
     # @option opts [String] :search Word or phrase to search for.
@@ -372,14 +377,14 @@ module OrderCloud
     # @option opts [Integer] :page_size Number of results to return per page. Default: 20, max: 100.
     # @option opts [Hash<String, String>] :filters Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or &#39;xp.???&#39;
     # @return [Array<(ListCategory, Fixnum, Hash)>] ListCategory data, response status code and response headers
-    def list_with_http_info(buyer_id, opts = {})
+    def list_with_http_info(catalog_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: CategoryApi.list ..."
       end
-      # verify the required parameter 'buyer_id' is set
-      fail ArgumentError, "Missing the required parameter 'buyer_id' when calling CategoryApi.list" if buyer_id.nil?
+      # verify the required parameter 'catalog_id' is set
+      fail ArgumentError, "Missing the required parameter 'catalog_id' when calling CategoryApi.list" if catalog_id.nil?
       # resource path
-      local_var_path = "/buyers/{buyerID}/categories".sub('{format}','json').sub('{' + 'buyerID' + '}', buyer_id.to_s)
+      local_var_path = "/catalogs/{catalogID}/categories".sub('{format}','json').sub('{' + 'catalogID' + '}', catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -423,43 +428,46 @@ module OrderCloud
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :category_id ID of the category.
+    # @option opts [String] :buyer_id ID of the buyer.
     # @option opts [String] :user_id ID of the user.
     # @option opts [String] :user_group_id ID of the user group.
     # @option opts [String] :level Level of the category.
     # @option opts [Integer] :page Page of results to return. Default: 1
     # @option opts [Integer] :page_size Number of results to return per page. Default: 20, max: 100.
     # @return [ListCategoryAssignment]
-    def list_assignments(buyer_id, opts = {})
-      data, _status_code, _headers = list_assignments_with_http_info(buyer_id, opts)
+    def list_assignments(catalog_id, opts = {})
+      data, _status_code, _headers = list_assignments_with_http_info(catalog_id, opts)
       return data
     end
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :category_id ID of the category.
+    # @option opts [String] :buyer_id ID of the buyer.
     # @option opts [String] :user_id ID of the user.
     # @option opts [String] :user_group_id ID of the user group.
     # @option opts [String] :level Level of the category.
     # @option opts [Integer] :page Page of results to return. Default: 1
     # @option opts [Integer] :page_size Number of results to return per page. Default: 20, max: 100.
     # @return [Array<(ListCategoryAssignment, Fixnum, Hash)>] ListCategoryAssignment data, response status code and response headers
-    def list_assignments_with_http_info(buyer_id, opts = {})
+    def list_assignments_with_http_info(catalog_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: CategoryApi.list_assignments ..."
       end
-      # verify the required parameter 'buyer_id' is set
-      fail ArgumentError, "Missing the required parameter 'buyer_id' when calling CategoryApi.list_assignments" if buyer_id.nil?
+      # verify the required parameter 'catalog_id' is set
+      fail ArgumentError, "Missing the required parameter 'catalog_id' when calling CategoryApi.list_assignments" if catalog_id.nil?
       # resource path
-      local_var_path = "/buyers/{buyerID}/categories/assignments".sub('{format}','json').sub('{' + 'buyerID' + '}', buyer_id.to_s)
+      local_var_path = "/catalogs/{catalogID}/categories/assignments".sub('{format}','json').sub('{' + 'catalogID' + '}', catalog_id.to_s)
 
       # query parameters
       query_params = {}
       query_params[:'categoryID'] = opts[:'category_id'] if !opts[:'category_id'].nil?
+      query_params[:'buyerID'] = opts[:'buyer_id'] if !opts[:'buyer_id'].nil?
       query_params[:'userID'] = opts[:'user_id'] if !opts[:'user_id'].nil?
       query_params[:'userGroupID'] = opts[:'user_group_id'] if !opts[:'user_group_id'].nil?
       query_params[:'level'] = opts[:'level'] if !opts[:'level'].nil?
@@ -498,35 +506,35 @@ module OrderCloud
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :category_id ID of the category.
     # @option opts [String] :product_id ID of the product.
     # @option opts [Integer] :page Page of results to return. Default: 1
     # @option opts [Integer] :page_size Number of results to return per page. Default: 20, max: 100.
     # @return [ListCategoryProductAssignment]
-    def list_product_assignments(buyer_id, opts = {})
-      data, _status_code, _headers = list_product_assignments_with_http_info(buyer_id, opts)
+    def list_product_assignments(catalog_id, opts = {})
+      data, _status_code, _headers = list_product_assignments_with_http_info(catalog_id, opts)
       return data
     end
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :category_id ID of the category.
     # @option opts [String] :product_id ID of the product.
     # @option opts [Integer] :page Page of results to return. Default: 1
     # @option opts [Integer] :page_size Number of results to return per page. Default: 20, max: 100.
     # @return [Array<(ListCategoryProductAssignment, Fixnum, Hash)>] ListCategoryProductAssignment data, response status code and response headers
-    def list_product_assignments_with_http_info(buyer_id, opts = {})
+    def list_product_assignments_with_http_info(catalog_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: CategoryApi.list_product_assignments ..."
       end
-      # verify the required parameter 'buyer_id' is set
-      fail ArgumentError, "Missing the required parameter 'buyer_id' when calling CategoryApi.list_product_assignments" if buyer_id.nil?
+      # verify the required parameter 'catalog_id' is set
+      fail ArgumentError, "Missing the required parameter 'catalog_id' when calling CategoryApi.list_product_assignments" if catalog_id.nil?
       # resource path
-      local_var_path = "/buyers/{buyerID}/categories/productassignments".sub('{format}','json').sub('{' + 'buyerID' + '}', buyer_id.to_s)
+      local_var_path = "/catalogs/{catalogID}/categories/productassignments".sub('{format}','json').sub('{' + 'catalogID' + '}', catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -567,35 +575,35 @@ module OrderCloud
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param category_id ID of the category.
     # @param category 
     # @param [Hash] opts the optional parameters
     # @return [Category]
-    def patch(buyer_id, category_id, category, opts = {})
-      data, _status_code, _headers = patch_with_http_info(buyer_id, category_id, category, opts)
+    def patch(catalog_id, category_id, category, opts = {})
+      data, _status_code, _headers = patch_with_http_info(catalog_id, category_id, category, opts)
       return data
     end
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param category_id ID of the category.
     # @param category 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Category, Fixnum, Hash)>] Category data, response status code and response headers
-    def patch_with_http_info(buyer_id, category_id, category, opts = {})
+    def patch_with_http_info(catalog_id, category_id, category, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: CategoryApi.patch ..."
       end
-      # verify the required parameter 'buyer_id' is set
-      fail ArgumentError, "Missing the required parameter 'buyer_id' when calling CategoryApi.patch" if buyer_id.nil?
+      # verify the required parameter 'catalog_id' is set
+      fail ArgumentError, "Missing the required parameter 'catalog_id' when calling CategoryApi.patch" if catalog_id.nil?
       # verify the required parameter 'category_id' is set
       fail ArgumentError, "Missing the required parameter 'category_id' when calling CategoryApi.patch" if category_id.nil?
       # verify the required parameter 'category' is set
       fail ArgumentError, "Missing the required parameter 'category' when calling CategoryApi.patch" if category.nil?
       # resource path
-      local_var_path = "/buyers/{buyerID}/categories/{categoryID}".sub('{format}','json').sub('{' + 'buyerID' + '}', buyer_id.to_s).sub('{' + 'categoryID' + '}', category_id.to_s)
+      local_var_path = "/catalogs/{catalogID}/categories/{categoryID}".sub('{format}','json').sub('{' + 'catalogID' + '}', catalog_id.to_s).sub('{' + 'categoryID' + '}', category_id.to_s)
 
       # query parameters
       query_params = {}
@@ -632,31 +640,31 @@ module OrderCloud
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param category_assignment 
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def save_assignment(buyer_id, category_assignment, opts = {})
-      save_assignment_with_http_info(buyer_id, category_assignment, opts)
+    def save_assignment(catalog_id, category_assignment, opts = {})
+      save_assignment_with_http_info(catalog_id, category_assignment, opts)
       return nil
     end
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param category_assignment 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def save_assignment_with_http_info(buyer_id, category_assignment, opts = {})
+    def save_assignment_with_http_info(catalog_id, category_assignment, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: CategoryApi.save_assignment ..."
       end
-      # verify the required parameter 'buyer_id' is set
-      fail ArgumentError, "Missing the required parameter 'buyer_id' when calling CategoryApi.save_assignment" if buyer_id.nil?
+      # verify the required parameter 'catalog_id' is set
+      fail ArgumentError, "Missing the required parameter 'catalog_id' when calling CategoryApi.save_assignment" if catalog_id.nil?
       # verify the required parameter 'category_assignment' is set
       fail ArgumentError, "Missing the required parameter 'category_assignment' when calling CategoryApi.save_assignment" if category_assignment.nil?
       # resource path
-      local_var_path = "/buyers/{buyerID}/categories/assignments".sub('{format}','json').sub('{' + 'buyerID' + '}', buyer_id.to_s)
+      local_var_path = "/catalogs/{catalogID}/categories/assignments".sub('{format}','json').sub('{' + 'catalogID' + '}', catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -692,31 +700,31 @@ module OrderCloud
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param product_assignment 
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def save_product_assignment(buyer_id, product_assignment, opts = {})
-      save_product_assignment_with_http_info(buyer_id, product_assignment, opts)
+    def save_product_assignment(catalog_id, product_assignment, opts = {})
+      save_product_assignment_with_http_info(catalog_id, product_assignment, opts)
       return nil
     end
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param product_assignment 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def save_product_assignment_with_http_info(buyer_id, product_assignment, opts = {})
+    def save_product_assignment_with_http_info(catalog_id, product_assignment, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: CategoryApi.save_product_assignment ..."
       end
-      # verify the required parameter 'buyer_id' is set
-      fail ArgumentError, "Missing the required parameter 'buyer_id' when calling CategoryApi.save_product_assignment" if buyer_id.nil?
+      # verify the required parameter 'catalog_id' is set
+      fail ArgumentError, "Missing the required parameter 'catalog_id' when calling CategoryApi.save_product_assignment" if catalog_id.nil?
       # verify the required parameter 'product_assignment' is set
       fail ArgumentError, "Missing the required parameter 'product_assignment' when calling CategoryApi.save_product_assignment" if product_assignment.nil?
       # resource path
-      local_var_path = "/buyers/{buyerID}/categories/productassignments".sub('{format}','json').sub('{' + 'buyerID' + '}', buyer_id.to_s)
+      local_var_path = "/catalogs/{catalogID}/categories/productassignments".sub('{format}','json').sub('{' + 'catalogID' + '}', catalog_id.to_s)
 
       # query parameters
       query_params = {}
@@ -752,35 +760,35 @@ module OrderCloud
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param category_id ID of the category.
     # @param category 
     # @param [Hash] opts the optional parameters
     # @return [Category]
-    def update(buyer_id, category_id, category, opts = {})
-      data, _status_code, _headers = update_with_http_info(buyer_id, category_id, category, opts)
+    def update(catalog_id, category_id, category, opts = {})
+      data, _status_code, _headers = update_with_http_info(catalog_id, category_id, category, opts)
       return data
     end
 
     # 
     # 
-    # @param buyer_id ID of the buyer.
+    # @param catalog_id ID of the catalog.
     # @param category_id ID of the category.
     # @param category 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Category, Fixnum, Hash)>] Category data, response status code and response headers
-    def update_with_http_info(buyer_id, category_id, category, opts = {})
+    def update_with_http_info(catalog_id, category_id, category, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: CategoryApi.update ..."
       end
-      # verify the required parameter 'buyer_id' is set
-      fail ArgumentError, "Missing the required parameter 'buyer_id' when calling CategoryApi.update" if buyer_id.nil?
+      # verify the required parameter 'catalog_id' is set
+      fail ArgumentError, "Missing the required parameter 'catalog_id' when calling CategoryApi.update" if catalog_id.nil?
       # verify the required parameter 'category_id' is set
       fail ArgumentError, "Missing the required parameter 'category_id' when calling CategoryApi.update" if category_id.nil?
       # verify the required parameter 'category' is set
       fail ArgumentError, "Missing the required parameter 'category' when calling CategoryApi.update" if category.nil?
       # resource path
-      local_var_path = "/buyers/{buyerID}/categories/{categoryID}".sub('{format}','json').sub('{' + 'buyerID' + '}', buyer_id.to_s).sub('{' + 'categoryID' + '}', category_id.to_s)
+      local_var_path = "/catalogs/{catalogID}/categories/{categoryID}".sub('{format}','json').sub('{' + 'catalogID' + '}', catalog_id.to_s).sub('{' + 'categoryID' + '}', category_id.to_s)
 
       # query parameters
       query_params = {}

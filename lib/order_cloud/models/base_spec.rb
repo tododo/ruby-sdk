@@ -40,6 +40,8 @@ module OrderCloud
 
     attr_accessor :default_option_id
 
+    attr_accessor :defines_variant
+
     attr_accessor :xp
 
 
@@ -53,6 +55,7 @@ module OrderCloud
         :'required' => :'Required',
         :'allow_open_text' => :'AllowOpenText',
         :'default_option_id' => :'DefaultOptionID',
+        :'defines_variant' => :'DefinesVariant',
         :'xp' => :'xp'
       }
     end
@@ -67,6 +70,7 @@ module OrderCloud
         :'required' => :'BOOLEAN',
         :'allow_open_text' => :'BOOLEAN',
         :'default_option_id' => :'String',
+        :'defines_variant' => :'BOOLEAN',
         :'xp' => :'Object'
       }
     end
@@ -107,6 +111,10 @@ module OrderCloud
         self.default_option_id = attributes[:'DefaultOptionID']
       end
 
+      if attributes.has_key?(:'DefinesVariant')
+        self.defines_variant = attributes[:'DefinesVariant']
+      end
+
       if attributes.has_key?(:'xp')
         self.xp = attributes[:'xp']
       end
@@ -138,6 +146,7 @@ module OrderCloud
           required == o.required &&
           allow_open_text == o.allow_open_text &&
           default_option_id == o.default_option_id &&
+          defines_variant == o.defines_variant &&
           xp == o.xp
     end
 
@@ -150,7 +159,7 @@ module OrderCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, list_order, name, default_value, required, allow_open_text, default_option_id, xp].hash
+      [id, list_order, name, default_value, required, allow_open_text, default_option_id, defines_variant, xp].hash
     end
 
     # Builds the object from hash

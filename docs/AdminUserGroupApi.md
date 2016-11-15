@@ -113,7 +113,7 @@ nil (empty response body)
 
 
 # **delete_user_assignment**
-> delete_user_assignment(user_group_id, user_id)
+> Task delete_user_assignment(user_group_id, user_id)
 
 
 
@@ -135,7 +135,8 @@ user_id = "user_id_example" # String | ID of the user.
 
 
 begin
-  api_instance.delete_user_assignment(user_group_id, user_id)
+  result = api_instance.delete_user_assignment(user_group_id, user_id)
+  p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling AdminUserGroupApi->delete_user_assignment: #{e}"
 end
@@ -150,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**Task**](Task.md)
 
 ### Authorization
 
@@ -381,7 +382,7 @@ Name | Type | Description  | Notes
 
 
 # **save_user_assignment**
-> save_user_assignment(user_group_assignment)
+> Task save_user_assignment(user_group_assignment)
 
 
 
@@ -401,7 +402,8 @@ user_group_assignment = OrderCloud::UserGroupAssignment.new # UserGroupAssignmen
 
 
 begin
-  api_instance.save_user_assignment(user_group_assignment)
+  result = api_instance.save_user_assignment(user_group_assignment)
+  p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling AdminUserGroupApi->save_user_assignment: #{e}"
 end
@@ -415,7 +417,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**Task**](Task.md)
 
 ### Authorization
 

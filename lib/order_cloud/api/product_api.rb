@@ -151,10 +151,10 @@ module OrderCloud
     # @param [Hash] opts the optional parameters
     # @option opts [String] :user_id ID of the user.
     # @option opts [String] :user_group_id ID of the user group.
-    # @return [nil]
+    # @return [Task]
     def delete_assignment(buyer_id, product_id, opts = {})
-      delete_assignment_with_http_info(buyer_id, product_id, opts)
-      return nil
+      data, _status_code, _headers = delete_assignment_with_http_info(buyer_id, product_id, opts)
+      return data
     end
 
     # 
@@ -164,7 +164,7 @@ module OrderCloud
     # @param [Hash] opts the optional parameters
     # @option opts [String] :user_id ID of the user.
     # @option opts [String] :user_group_id ID of the user group.
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(Task, Fixnum, Hash)>] Task data, response status code and response headers
     def delete_assignment_with_http_info(buyer_id, product_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ProductApi.delete_assignment ..."
@@ -203,7 +203,8 @@ module OrderCloud
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'Task')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductApi#delete_assignment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1005,17 +1006,17 @@ module OrderCloud
     # 
     # @param product_assignment 
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [Task]
     def save_assignment(product_assignment, opts = {})
-      save_assignment_with_http_info(product_assignment, opts)
-      return nil
+      data, _status_code, _headers = save_assignment_with_http_info(product_assignment, opts)
+      return data
     end
 
     # 
     # 
     # @param product_assignment 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(Task, Fixnum, Hash)>] Task data, response status code and response headers
     def save_assignment_with_http_info(product_assignment, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ProductApi.save_assignment ..."
@@ -1050,7 +1051,8 @@ module OrderCloud
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'Task')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProductApi#save_assignment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

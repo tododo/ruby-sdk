@@ -28,6 +28,8 @@ module OrderCloud
   class CategoryAssignment
     attr_accessor :category_id
 
+    attr_accessor :buyer_id
+
     attr_accessor :user_id
 
     attr_accessor :user_group_id
@@ -37,6 +39,7 @@ module OrderCloud
     def self.attribute_map
       {
         :'category_id' => :'CategoryID',
+        :'buyer_id' => :'BuyerID',
         :'user_id' => :'UserID',
         :'user_group_id' => :'UserGroupID'
       }
@@ -46,6 +49,7 @@ module OrderCloud
     def self.swagger_types
       {
         :'category_id' => :'String',
+        :'buyer_id' => :'String',
         :'user_id' => :'String',
         :'user_group_id' => :'String'
       }
@@ -61,6 +65,10 @@ module OrderCloud
 
       if attributes.has_key?(:'CategoryID')
         self.category_id = attributes[:'CategoryID']
+      end
+
+      if attributes.has_key?(:'BuyerID')
+        self.buyer_id = attributes[:'BuyerID']
       end
 
       if attributes.has_key?(:'UserID')
@@ -92,6 +100,7 @@ module OrderCloud
       return true if self.equal?(o)
       self.class == o.class &&
           category_id == o.category_id &&
+          buyer_id == o.buyer_id &&
           user_id == o.user_id &&
           user_group_id == o.user_group_id
     end
@@ -105,7 +114,7 @@ module OrderCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [category_id, user_id, user_group_id].hash
+      [category_id, buyer_id, user_id, user_group_id].hash
     end
 
     # Builds the object from hash

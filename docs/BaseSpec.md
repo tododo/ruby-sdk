@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **required** | **BOOLEAN** |  | [optional] 
 **allow_open_text** | **BOOLEAN** |  | [optional] 
 **default_option_id** | **String** |  | [optional] 
+**defines_variant** | **BOOLEAN** |  | [optional] 
 **xp** | **Object** |  | [optional] 
 
 

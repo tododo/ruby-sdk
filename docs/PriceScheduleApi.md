@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 
 # **delete**
-> delete(price_schedule_id)
+> Task delete(price_schedule_id)
 
 
 
@@ -84,7 +84,8 @@ price_schedule_id = "price_schedule_id_example" # String | ID of the price sched
 
 
 begin
-  api_instance.delete(price_schedule_id)
+  result = api_instance.delete(price_schedule_id)
+  p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling PriceScheduleApi->delete: #{e}"
 end
@@ -98,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**Task**](Task.md)
 
 ### Authorization
 
@@ -112,7 +113,7 @@ nil (empty response body)
 
 
 # **delete_price_break**
-> delete_price_break(price_schedule_id, quantity)
+> Task delete_price_break(price_schedule_id, quantity)
 
 
 
@@ -134,7 +135,8 @@ quantity = 56 # Integer | Quantity of the price schedule.
 
 
 begin
-  api_instance.delete_price_break(price_schedule_id, quantity)
+  result = api_instance.delete_price_break(price_schedule_id, quantity)
+  p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling PriceScheduleApi->delete_price_break: #{e}"
 end
@@ -149,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**Task**](Task.md)
 
 ### Authorization
 

@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 
 # **patch**
-> patch(user_id, user)
+> User patch(user_id, user)
 
 
 
@@ -241,7 +241,8 @@ user = OrderCloud::User.new # User |
 
 
 begin
-  api_instance.patch(user_id, user)
+  result = api_instance.patch(user_id, user)
+  p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling AdminUserApi->patch: #{e}"
 end
@@ -256,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**User**](User.md)
 
 ### Authorization
 

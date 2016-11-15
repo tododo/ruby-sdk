@@ -28,22 +28,18 @@ module OrderCloud
   class BuyerSpec
     attr_accessor :options
 
-    attr_accessor :defines_variant
-
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'options' => :'Options',
-        :'defines_variant' => :'DefinesVariant'
+        :'options' => :'Options'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'options' => :'Array<SpecOption>',
-        :'defines_variant' => :'BOOLEAN'
+        :'options' => :'Array<SpecOption>'
       }
     end
 
@@ -59,10 +55,6 @@ module OrderCloud
         if (value = attributes[:'Options']).is_a?(Array)
           self.options = value
         end
-      end
-
-      if attributes.has_key?(:'DefinesVariant')
-        self.defines_variant = attributes[:'DefinesVariant']
       end
 
     end
@@ -85,8 +77,7 @@ module OrderCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          options == o.options &&
-          defines_variant == o.defines_variant
+          options == o.options
     end
 
     # @see the `==` method
@@ -98,7 +89,7 @@ module OrderCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [options, defines_variant].hash
+      [options].hash
     end
 
     # Builds the object from hash

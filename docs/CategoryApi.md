@@ -4,22 +4,22 @@ All URIs are relative to *https://api.ordercloud.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](CategoryApi.md#create) | **POST** /buyers/{buyerID}/categories | 
-[**delete**](CategoryApi.md#delete) | **DELETE** /buyers/{buyerID}/categories/{categoryID} | 
-[**delete_assignment**](CategoryApi.md#delete_assignment) | **DELETE** /buyers/{buyerID}/categories/{categoryID}/assignments | 
-[**delete_product_assignment**](CategoryApi.md#delete_product_assignment) | **DELETE** /buyers/{buyerID}/categories/{categoryID}/productassignments/{productID} | 
-[**get**](CategoryApi.md#get) | **GET** /buyers/{buyerID}/categories/{categoryID} | 
-[**list**](CategoryApi.md#list) | **GET** /buyers/{buyerID}/categories | 
-[**list_assignments**](CategoryApi.md#list_assignments) | **GET** /buyers/{buyerID}/categories/assignments | 
-[**list_product_assignments**](CategoryApi.md#list_product_assignments) | **GET** /buyers/{buyerID}/categories/productassignments | 
-[**patch**](CategoryApi.md#patch) | **PATCH** /buyers/{buyerID}/categories/{categoryID} | 
-[**save_assignment**](CategoryApi.md#save_assignment) | **POST** /buyers/{buyerID}/categories/assignments | 
-[**save_product_assignment**](CategoryApi.md#save_product_assignment) | **POST** /buyers/{buyerID}/categories/productassignments | 
-[**update**](CategoryApi.md#update) | **PUT** /buyers/{buyerID}/categories/{categoryID} | 
+[**create**](CategoryApi.md#create) | **POST** /catalogs/{catalogID}/categories | 
+[**delete**](CategoryApi.md#delete) | **DELETE** /catalogs/{catalogID}/categories/{categoryID} | 
+[**delete_assignment**](CategoryApi.md#delete_assignment) | **DELETE** /catalogs/{catalogID}/categories/{categoryID}/assignments | 
+[**delete_product_assignment**](CategoryApi.md#delete_product_assignment) | **DELETE** /catalogs/{catalogID}/categories/{categoryID}/productassignments/{productID} | 
+[**get**](CategoryApi.md#get) | **GET** /catalogs/{catalogID}/categories/{categoryID} | 
+[**list**](CategoryApi.md#list) | **GET** /catalogs/{catalogID}/categories | 
+[**list_assignments**](CategoryApi.md#list_assignments) | **GET** /catalogs/{catalogID}/categories/assignments | 
+[**list_product_assignments**](CategoryApi.md#list_product_assignments) | **GET** /catalogs/{catalogID}/categories/productassignments | 
+[**patch**](CategoryApi.md#patch) | **PATCH** /catalogs/{catalogID}/categories/{categoryID} | 
+[**save_assignment**](CategoryApi.md#save_assignment) | **POST** /catalogs/{catalogID}/categories/assignments | 
+[**save_product_assignment**](CategoryApi.md#save_product_assignment) | **POST** /catalogs/{catalogID}/categories/productassignments | 
+[**update**](CategoryApi.md#update) | **PUT** /catalogs/{catalogID}/categories/{categoryID} | 
 
 
 # **create**
-> Category create(buyer_id, category)
+> Category create(catalog_id, category)
 
 
 
@@ -35,13 +35,13 @@ end
 
 api_instance = OrderCloud::CategoryApi.new
 
-buyer_id = "buyer_id_example" # String | ID of the buyer.
+catalog_id = "catalog_id_example" # String | ID of the catalog.
 
 category = OrderCloud::Category.new # Category | 
 
 
 begin
-  result = api_instance.create(buyer_id, category)
+  result = api_instance.create(catalog_id, category)
   p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling CategoryApi->create: #{e}"
@@ -52,7 +52,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **buyer_id** | **String**| ID of the buyer. | 
+ **catalog_id** | **String**| ID of the catalog. | 
  **category** | [**Category**](Category.md)|  | 
 
 ### Return type
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 
 # **delete**
-> delete(buyer_id, category_id)
+> delete(catalog_id, category_id)
 
 
 
@@ -87,13 +87,13 @@ end
 
 api_instance = OrderCloud::CategoryApi.new
 
-buyer_id = "buyer_id_example" # String | ID of the buyer.
+catalog_id = "catalog_id_example" # String | ID of the catalog.
 
 category_id = "category_id_example" # String | ID of the category.
 
 
 begin
-  api_instance.delete(buyer_id, category_id)
+  api_instance.delete(catalog_id, category_id)
 rescue OrderCloud::ApiError => e
   puts "Exception when calling CategoryApi->delete: #{e}"
 end
@@ -103,7 +103,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **buyer_id** | **String**| ID of the buyer. | 
+ **catalog_id** | **String**| ID of the catalog. | 
  **category_id** | **String**| ID of the category. | 
 
 ### Return type
@@ -122,7 +122,7 @@ nil (empty response body)
 
 
 # **delete_assignment**
-> delete_assignment(buyer_id, category_id, opts)
+> delete_assignment(catalog_id, category_id, buyer_id, opts)
 
 
 
@@ -138,9 +138,11 @@ end
 
 api_instance = OrderCloud::CategoryApi.new
 
-buyer_id = "buyer_id_example" # String | ID of the buyer.
+catalog_id = "catalog_id_example" # String | ID of the catalog.
 
 category_id = "category_id_example" # String | ID of the category.
+
+buyer_id = "buyer_id_example" # String | ID of the buyer.
 
 opts = { 
   user_id: "user_id_example", # String | ID of the user.
@@ -148,7 +150,7 @@ opts = {
 }
 
 begin
-  api_instance.delete_assignment(buyer_id, category_id, opts)
+  api_instance.delete_assignment(catalog_id, category_id, buyer_id, opts)
 rescue OrderCloud::ApiError => e
   puts "Exception when calling CategoryApi->delete_assignment: #{e}"
 end
@@ -158,8 +160,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **buyer_id** | **String**| ID of the buyer. | 
+ **catalog_id** | **String**| ID of the catalog. | 
  **category_id** | **String**| ID of the category. | 
+ **buyer_id** | **String**| ID of the buyer. | 
  **user_id** | **String**| ID of the user. | [optional] 
  **user_group_id** | **String**| ID of the user group. | [optional] 
 
@@ -179,7 +182,7 @@ nil (empty response body)
 
 
 # **delete_product_assignment**
-> delete_product_assignment(buyer_id, category_id, product_id)
+> delete_product_assignment(catalog_id, category_id, product_id)
 
 
 
@@ -195,7 +198,7 @@ end
 
 api_instance = OrderCloud::CategoryApi.new
 
-buyer_id = "buyer_id_example" # String | ID of the buyer.
+catalog_id = "catalog_id_example" # String | ID of the catalog.
 
 category_id = "category_id_example" # String | ID of the category.
 
@@ -203,7 +206,7 @@ product_id = "product_id_example" # String | ID of the product.
 
 
 begin
-  api_instance.delete_product_assignment(buyer_id, category_id, product_id)
+  api_instance.delete_product_assignment(catalog_id, category_id, product_id)
 rescue OrderCloud::ApiError => e
   puts "Exception when calling CategoryApi->delete_product_assignment: #{e}"
 end
@@ -213,7 +216,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **buyer_id** | **String**| ID of the buyer. | 
+ **catalog_id** | **String**| ID of the catalog. | 
  **category_id** | **String**| ID of the category. | 
  **product_id** | **String**| ID of the product. | 
 
@@ -233,7 +236,7 @@ nil (empty response body)
 
 
 # **get**
-> Category get(buyer_id, category_id)
+> Category get(catalog_id, category_id)
 
 
 
@@ -249,13 +252,13 @@ end
 
 api_instance = OrderCloud::CategoryApi.new
 
-buyer_id = "buyer_id_example" # String | ID of the buyer.
+catalog_id = "catalog_id_example" # String | ID of the catalog.
 
 category_id = "category_id_example" # String | ID of the category.
 
 
 begin
-  result = api_instance.get(buyer_id, category_id)
+  result = api_instance.get(catalog_id, category_id)
   p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling CategoryApi->get: #{e}"
@@ -266,7 +269,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **buyer_id** | **String**| ID of the buyer. | 
+ **catalog_id** | **String**| ID of the catalog. | 
  **category_id** | **String**| ID of the category. | 
 
 ### Return type
@@ -285,7 +288,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> ListCategory list(buyer_id, opts)
+> ListCategory list(catalog_id, opts)
 
 
 
@@ -301,7 +304,7 @@ end
 
 api_instance = OrderCloud::CategoryApi.new
 
-buyer_id = "buyer_id_example" # String | ID of the buyer.
+catalog_id = "catalog_id_example" # String | ID of the catalog.
 
 opts = { 
   depth: "depth_example", # String | Depth of the category.
@@ -314,7 +317,7 @@ opts = {
 }
 
 begin
-  result = api_instance.list(buyer_id, opts)
+  result = api_instance.list(catalog_id, opts)
   p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling CategoryApi->list: #{e}"
@@ -325,7 +328,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **buyer_id** | **String**| ID of the buyer. | 
+ **catalog_id** | **String**| ID of the catalog. | 
  **depth** | **String**| Depth of the category. | [optional] 
  **search** | **String**| Word or phrase to search for. | [optional] 
  **search_on** | **String**| Comma-delimited list of fields to search on. | [optional] 
@@ -350,7 +353,7 @@ Name | Type | Description  | Notes
 
 
 # **list_assignments**
-> ListCategoryAssignment list_assignments(buyer_id, opts)
+> ListCategoryAssignment list_assignments(catalog_id, opts)
 
 
 
@@ -366,10 +369,11 @@ end
 
 api_instance = OrderCloud::CategoryApi.new
 
-buyer_id = "buyer_id_example" # String | ID of the buyer.
+catalog_id = "catalog_id_example" # String | ID of the catalog.
 
 opts = { 
   category_id: "category_id_example", # String | ID of the category.
+  buyer_id: "buyer_id_example", # String | ID of the buyer.
   user_id: "user_id_example", # String | ID of the user.
   user_group_id: "user_group_id_example", # String | ID of the user group.
   level: "level_example", # String | Level of the category.
@@ -378,7 +382,7 @@ opts = {
 }
 
 begin
-  result = api_instance.list_assignments(buyer_id, opts)
+  result = api_instance.list_assignments(catalog_id, opts)
   p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling CategoryApi->list_assignments: #{e}"
@@ -389,8 +393,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **buyer_id** | **String**| ID of the buyer. | 
+ **catalog_id** | **String**| ID of the catalog. | 
  **category_id** | **String**| ID of the category. | [optional] 
+ **buyer_id** | **String**| ID of the buyer. | [optional] 
  **user_id** | **String**| ID of the user. | [optional] 
  **user_group_id** | **String**| ID of the user group. | [optional] 
  **level** | **String**| Level of the category. | [optional] 
@@ -413,7 +418,7 @@ Name | Type | Description  | Notes
 
 
 # **list_product_assignments**
-> ListCategoryProductAssignment list_product_assignments(buyer_id, opts)
+> ListCategoryProductAssignment list_product_assignments(catalog_id, opts)
 
 
 
@@ -429,7 +434,7 @@ end
 
 api_instance = OrderCloud::CategoryApi.new
 
-buyer_id = "buyer_id_example" # String | ID of the buyer.
+catalog_id = "catalog_id_example" # String | ID of the catalog.
 
 opts = { 
   category_id: "category_id_example", # String | ID of the category.
@@ -439,7 +444,7 @@ opts = {
 }
 
 begin
-  result = api_instance.list_product_assignments(buyer_id, opts)
+  result = api_instance.list_product_assignments(catalog_id, opts)
   p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling CategoryApi->list_product_assignments: #{e}"
@@ -450,7 +455,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **buyer_id** | **String**| ID of the buyer. | 
+ **catalog_id** | **String**| ID of the catalog. | 
  **category_id** | **String**| ID of the category. | [optional] 
  **product_id** | **String**| ID of the product. | [optional] 
  **page** | **Integer**| Page of results to return. Default: 1 | [optional] 
@@ -472,7 +477,7 @@ Name | Type | Description  | Notes
 
 
 # **patch**
-> Category patch(buyer_id, category_id, category)
+> Category patch(catalog_id, category_id, category)
 
 
 
@@ -488,7 +493,7 @@ end
 
 api_instance = OrderCloud::CategoryApi.new
 
-buyer_id = "buyer_id_example" # String | ID of the buyer.
+catalog_id = "catalog_id_example" # String | ID of the catalog.
 
 category_id = "category_id_example" # String | ID of the category.
 
@@ -496,7 +501,7 @@ category = OrderCloud::Category.new # Category |
 
 
 begin
-  result = api_instance.patch(buyer_id, category_id, category)
+  result = api_instance.patch(catalog_id, category_id, category)
   p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling CategoryApi->patch: #{e}"
@@ -507,7 +512,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **buyer_id** | **String**| ID of the buyer. | 
+ **catalog_id** | **String**| ID of the catalog. | 
  **category_id** | **String**| ID of the category. | 
  **category** | [**Category**](Category.md)|  | 
 
@@ -527,7 +532,7 @@ Name | Type | Description  | Notes
 
 
 # **save_assignment**
-> save_assignment(buyer_id, category_assignment)
+> save_assignment(catalog_id, category_assignment)
 
 
 
@@ -543,13 +548,13 @@ end
 
 api_instance = OrderCloud::CategoryApi.new
 
-buyer_id = "buyer_id_example" # String | ID of the buyer.
+catalog_id = "catalog_id_example" # String | ID of the catalog.
 
 category_assignment = OrderCloud::CategoryAssignment.new # CategoryAssignment | 
 
 
 begin
-  api_instance.save_assignment(buyer_id, category_assignment)
+  api_instance.save_assignment(catalog_id, category_assignment)
 rescue OrderCloud::ApiError => e
   puts "Exception when calling CategoryApi->save_assignment: #{e}"
 end
@@ -559,7 +564,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **buyer_id** | **String**| ID of the buyer. | 
+ **catalog_id** | **String**| ID of the catalog. | 
  **category_assignment** | [**CategoryAssignment**](CategoryAssignment.md)|  | 
 
 ### Return type
@@ -578,7 +583,7 @@ nil (empty response body)
 
 
 # **save_product_assignment**
-> save_product_assignment(buyer_id, product_assignment)
+> save_product_assignment(catalog_id, product_assignment)
 
 
 
@@ -594,13 +599,13 @@ end
 
 api_instance = OrderCloud::CategoryApi.new
 
-buyer_id = "buyer_id_example" # String | ID of the buyer.
+catalog_id = "catalog_id_example" # String | ID of the catalog.
 
 product_assignment = OrderCloud::CategoryProductAssignment.new # CategoryProductAssignment | 
 
 
 begin
-  api_instance.save_product_assignment(buyer_id, product_assignment)
+  api_instance.save_product_assignment(catalog_id, product_assignment)
 rescue OrderCloud::ApiError => e
   puts "Exception when calling CategoryApi->save_product_assignment: #{e}"
 end
@@ -610,7 +615,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **buyer_id** | **String**| ID of the buyer. | 
+ **catalog_id** | **String**| ID of the catalog. | 
  **product_assignment** | [**CategoryProductAssignment**](CategoryProductAssignment.md)|  | 
 
 ### Return type
@@ -629,7 +634,7 @@ nil (empty response body)
 
 
 # **update**
-> Category update(buyer_id, category_id, category)
+> Category update(catalog_id, category_id, category)
 
 
 
@@ -645,7 +650,7 @@ end
 
 api_instance = OrderCloud::CategoryApi.new
 
-buyer_id = "buyer_id_example" # String | ID of the buyer.
+catalog_id = "catalog_id_example" # String | ID of the catalog.
 
 category_id = "category_id_example" # String | ID of the category.
 
@@ -653,7 +658,7 @@ category = OrderCloud::Category.new # Category |
 
 
 begin
-  result = api_instance.update(buyer_id, category_id, category)
+  result = api_instance.update(catalog_id, category_id, category)
   p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling CategoryApi->update: #{e}"
@@ -664,7 +669,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **buyer_id** | **String**| ID of the buyer. | 
+ **catalog_id** | **String**| ID of the catalog. | 
  **category_id** | **String**| ID of the category. | 
  **category** | [**Category**](Category.md)|  | 
 

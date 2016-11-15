@@ -38,8 +38,6 @@ module OrderCloud
 
     attr_accessor :shared_key
 
-    attr_accessor :client_id
-
     attr_accessor :append_route
 
     attr_accessor :use_verb
@@ -58,7 +56,6 @@ module OrderCloud
         :'description' => :'Description',
         :'base_url' => :'BaseUrl',
         :'shared_key' => :'SharedKey',
-        :'client_id' => :'ClientID',
         :'append_route' => :'AppendRoute',
         :'use_verb' => :'UseVerb',
         :'elevated_claims_list' => :'ElevatedClaimsList',
@@ -75,7 +72,6 @@ module OrderCloud
         :'description' => :'String',
         :'base_url' => :'String',
         :'shared_key' => :'String',
-        :'client_id' => :'String',
         :'append_route' => :'BOOLEAN',
         :'use_verb' => :'BOOLEAN',
         :'elevated_claims_list' => :'String',
@@ -113,10 +109,6 @@ module OrderCloud
 
       if attributes.has_key?(:'SharedKey')
         self.shared_key = attributes[:'SharedKey']
-      end
-
-      if attributes.has_key?(:'ClientID')
-        self.client_id = attributes[:'ClientID']
       end
 
       if attributes.has_key?(:'AppendRoute')
@@ -161,7 +153,6 @@ module OrderCloud
           description == o.description &&
           base_url == o.base_url &&
           shared_key == o.shared_key &&
-          client_id == o.client_id &&
           append_route == o.append_route &&
           use_verb == o.use_verb &&
           elevated_claims_list == o.elevated_claims_list &&
@@ -177,7 +168,7 @@ module OrderCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, name, type, description, base_url, shared_key, client_id, append_route, use_verb, elevated_claims_list, config_data].hash
+      [id, name, type, description, base_url, shared_key, append_route, use_verb, elevated_claims_list, config_data].hash
     end
 
     # Builds the object from hash

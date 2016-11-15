@@ -124,7 +124,7 @@ nil (empty response body)
 
 
 # **delete_assignment**
-> delete_assignment(buyer_id, product_id, opts)
+> Task delete_assignment(buyer_id, product_id, opts)
 
 
 
@@ -150,7 +150,8 @@ opts = {
 }
 
 begin
-  api_instance.delete_assignment(buyer_id, product_id, opts)
+  result = api_instance.delete_assignment(buyer_id, product_id, opts)
+  p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling ProductApi->delete_assignment: #{e}"
 end
@@ -167,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**Task**](Task.md)
 
 ### Authorization
 
@@ -853,7 +854,7 @@ Name | Type | Description  | Notes
 
 
 # **save_assignment**
-> save_assignment(product_assignment)
+> Task save_assignment(product_assignment)
 
 
 
@@ -873,7 +874,8 @@ product_assignment = OrderCloud::ProductAssignment.new # ProductAssignment |
 
 
 begin
-  api_instance.save_assignment(product_assignment)
+  result = api_instance.save_assignment(product_assignment)
+  p result
 rescue OrderCloud::ApiError => e
   puts "Exception when calling ProductApi->save_assignment: #{e}"
 end
@@ -887,7 +889,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**Task**](Task.md)
 
 ### Authorization
 

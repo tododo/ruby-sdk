@@ -351,10 +351,10 @@ module OrderCloud
     # @param buyer_id ID of the buyer.
     # @param order_id ID of the order.
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [Task]
     def delete(buyer_id, order_id, opts = {})
-      delete_with_http_info(buyer_id, order_id, opts)
-      return nil
+      data, _status_code, _headers = delete_with_http_info(buyer_id, order_id, opts)
+      return data
     end
 
     # 
@@ -362,7 +362,7 @@ module OrderCloud
     # @param buyer_id ID of the buyer.
     # @param order_id ID of the order.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(Task, Fixnum, Hash)>] Task data, response status code and response headers
     def delete_with_http_info(buyer_id, order_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: OrderApi.delete ..."
@@ -399,7 +399,8 @@ module OrderCloud
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'Task')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrderApi#delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
